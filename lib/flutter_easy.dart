@@ -1,7 +1,5 @@
 library flutter_easy;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'theme/easy_theme.dart';
+export 'theme/font_size.dart';
+export 'theme/text_style_ex.dart';
