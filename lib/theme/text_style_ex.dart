@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'font_size.dart';
 
-const kDefaultPrimaryColor = Color(0xFF3C5BFF);
-
 extension TextStyleEx on TextStyle {
   TextStyle get white => copyWith(color: Colors.white);
 
