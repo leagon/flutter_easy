@@ -1,6 +1,6 @@
 # flutter_easy
 
-### Theme
+## Theme
 
 #### TextStyle extension
 ```dart
@@ -20,7 +20,7 @@ ThemeData(
   ],
 )
 ```
-### Foundation
+## Foundation
 
 #### EasyError
 
@@ -85,3 +85,30 @@ const Status.failure(error: EasyError.timeout);
 
 `Disposable` provider a `dispose()` method.
 
+## Components
+
+#### EasyBackButton
+
+`EasyBackButton` is a leading back button on navigatorBar. It will pop automatic when pressed (don't manual call `Navigator.of(context).pop` in `onPressed`).
+
+* `EasyBackButton()` default back button, show a back arrow
+* `EasyBackButton.close()` show a close icon
+* `EasyBackButton.cancel()` show `Cancel` text
+* `EasyBackButton.text()` custom text such as `Cancel`
+* `previousTitle` means previous page title
+* `backIcon` can set a icon or text
+* `color` was used for backIcon and text style, defult `black87`
+
+```dart
+EasyBackButton();
+EasyBackButton(
+	backIcon: Icon(Icons.back), 
+	previousTitle: 'Settings', 
+	onPressed: () {
+		// other operation
+	},
+);
+EasyBackButton.close();
+EasyBackButton.cancel();
+EasyBackButton.text('Cancel');
+```
