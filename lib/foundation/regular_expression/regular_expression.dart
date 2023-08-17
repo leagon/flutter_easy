@@ -10,6 +10,7 @@ enum RegularExpression {
   lowercase(r'[a-z]'),
   specialCharacters(r'[!@#$%^&*(),.?":{}|<>]'),
   macAddress(r'^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$'),
+  partMacAddress(r'[0-9A-Fa-f]'),
   numberic(r'(^[0-9]*$)'),
   aa('');
 
