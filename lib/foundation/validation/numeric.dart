@@ -17,13 +17,14 @@ extension NumbericValidationErrorMessage on NumericValidationError {
 
 class Numeric extends FormzInput<String, NumericValidationError> {
   const Numeric.pure() : super.pure("");
+
   const Numeric.dirty([String value = ""]) : super.dirty(value);
 
   @override
   NumericValidationError? validator(String value) {
     return value.isEmpty
         ? null
-        : (RegularExpression.numericRegExp.hasMatch(value)
+        : (RegularExpression.numberic.regExp.hasMatch(value)
             ? null
             : NumericValidationError.invalid);
   }
@@ -31,13 +32,14 @@ class Numeric extends FormzInput<String, NumericValidationError> {
 
 class NumericRequired extends FormzInput<String, NumericValidationError> {
   const NumericRequired.pure() : super.pure("");
+
   const NumericRequired.dirty([String value = ""]) : super.dirty(value);
 
   @override
   NumericValidationError? validator(String value) {
     return value.isEmpty
         ? NumericValidationError.empty
-        : RegularExpression.numericRegExp.hasMatch(value)
+        : RegularExpression.numberic.regExp.hasMatch(value)
             ? null
             : NumericValidationError.invalid;
   }

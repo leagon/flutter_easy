@@ -17,13 +17,14 @@ extension WebsiteValidationErrorMesage on WebsiteValidationError {
 
 class Website extends FormzInput<String, WebsiteValidationError> {
   const Website.pure() : super.pure("");
+
   const Website.dirty([String value = ""]) : super.dirty(value);
 
   @override
   WebsiteValidationError? validator(String value) {
     return value.isEmpty
         ? null
-        : (RegularExpression.websiteRegExp.hasMatch(value)
+        : (RegularExpression.website.regExp.hasMatch(value)
             ? null
             : WebsiteValidationError.invalid);
   }
@@ -31,13 +32,14 @@ class Website extends FormzInput<String, WebsiteValidationError> {
 
 class WebsiteRequired extends FormzInput<String, WebsiteValidationError> {
   const WebsiteRequired.pure() : super.pure('');
+
   const WebsiteRequired.dirty([String value = '']) : super.dirty(value);
 
   @override
   WebsiteValidationError? validator(String value) {
     return value.isEmpty
         ? WebsiteValidationError.empty
-        : RegularExpression.websiteRegExp.hasMatch(value)
+        : RegularExpression.website.regExp.hasMatch(value)
             ? null
             : WebsiteValidationError.invalid;
   }

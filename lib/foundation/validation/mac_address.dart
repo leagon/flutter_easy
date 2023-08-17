@@ -17,13 +17,14 @@ extension MacAddressValidationErrorMesage on MacAddressValidationError {
 
 class MacAddress extends FormzInput<String, MacAddressValidationError> {
   const MacAddress.pure() : super.pure("");
+
   const MacAddress.dirty([String value = ""]) : super.dirty(value);
 
   @override
   MacAddressValidationError? validator(String value) {
     return value.isEmpty
         ? null
-        : (RegularExpression.macAddressRegExp.hasMatch(value)
+        : (RegularExpression.macAddress.regExp.hasMatch(value)
             ? null
             : MacAddressValidationError.invalid);
   }
@@ -31,13 +32,14 @@ class MacAddress extends FormzInput<String, MacAddressValidationError> {
 
 class MacAddressRequired extends FormzInput<String, MacAddressValidationError> {
   const MacAddressRequired.pure() : super.pure('');
+
   const MacAddressRequired.dirty([String value = '']) : super.dirty(value);
 
   @override
   MacAddressValidationError? validator(String value) {
     return value.isEmpty
         ? MacAddressValidationError.empty
-        : RegularExpression.macAddressRegExp.hasMatch(value)
+        : RegularExpression.macAddress.regExp.hasMatch(value)
             ? null
             : MacAddressValidationError.invalid;
   }

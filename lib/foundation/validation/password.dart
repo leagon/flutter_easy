@@ -35,25 +35,10 @@ class PasswordRequired extends FormzInput<String, PasswordValidationError> {
   PasswordValidationError? validator(String value) {
     return value.isEmpty
         ? PasswordValidationError.empty
-        : value.contains(RegularExpression.uppercaseRegExp) &&
-                value.contains(RegularExpression.lowercaseRegExp) &&
-                value.contains(RegularExpression.specialCharactersRegExp) &&
+        : value.contains(RegularExpression.uppercase.regExp) &&
+                value.contains(RegularExpression.lowercase.regExp) &&
+                value.contains(RegularExpression.specialCharacters.regExp) &&
                 value.length > 10
-            ? null
-            : PasswordValidationError.invalid;
-  }
-}
-
-class NvrPasswordRequired extends FormzInput<String, PasswordValidationError> {
-  const NvrPasswordRequired.pure() : super.pure("");
-
-  const NvrPasswordRequired.dirty([String value = ""]) : super.dirty(value);
-
-  @override
-  PasswordValidationError? validator(String value) {
-    return value.isEmpty
-        ? PasswordValidationError.empty
-        : RegularExpression.nvrPasswordRegExp.hasMatch(value)
             ? null
             : PasswordValidationError.invalid;
   }

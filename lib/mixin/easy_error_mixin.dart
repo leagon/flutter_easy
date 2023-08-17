@@ -1,6 +1,6 @@
 import 'package:flutter_easy/foundation/error/easy_error.dart';
 
-mixin TuringErrorMixin {
+mixin EasyErrorMixin {
   handleError(dynamic error) {
     throw convertError(error);
   }

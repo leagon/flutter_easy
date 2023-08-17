@@ -17,13 +17,14 @@ extension PhoneValidationErrorMesage on PhoneValidationError {
 
 class Phone extends FormzInput<String, PhoneValidationError> {
   const Phone.pure() : super.pure("");
+
   const Phone.dirty([String value = ""]) : super.dirty(value);
 
   @override
   PhoneValidationError? validator(String value) {
     return value.isEmpty
         ? null
-        : (RegularExpression.phoneRegExp.hasMatch(value)
+        : (RegularExpression.phone.regExp.hasMatch(value)
             ? null
             : PhoneValidationError.invalid);
   }
@@ -31,13 +32,14 @@ class Phone extends FormzInput<String, PhoneValidationError> {
 
 class PhoneRequired extends FormzInput<String, PhoneValidationError> {
   const PhoneRequired.pure() : super.pure('');
+
   const PhoneRequired.dirty([String value = '']) : super.dirty(value);
 
   @override
   PhoneValidationError? validator(String value) {
     return value.isEmpty
         ? PhoneValidationError.empty
-        : RegularExpression.phoneRegExp.hasMatch(value)
+        : RegularExpression.phone.regExp.hasMatch(value)
             ? null
             : PhoneValidationError.invalid;
   }

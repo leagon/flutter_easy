@@ -25,7 +25,7 @@ class Name extends FormzInput<String, NameValidationError> {
     // Consider empty as valid
     return value.isEmpty
         ? null
-        : (RegularExpression.nameRegExp.hasMatch(value)
+        : (RegularExpression.name.regExp.hasMatch(value)
             ? null
             : NameValidationError.invalid);
   }
@@ -41,7 +41,7 @@ class NameRequired extends FormzInput<String, NameValidationError> {
     final name = value.trim();
     return name.isEmpty
         ? NameValidationError.empty
-        : RegularExpression.nameRegExp.hasMatch(name)
+        : RegularExpression.name.regExp.hasMatch(name)
             ? null
             : NameValidationError.invalid;
   }
