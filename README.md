@@ -95,8 +95,8 @@ const Status.failure(error: EasyError.timeout);
 * `EasyBackButton.close()` show a close icon
 * `EasyBackButton.cancel()` show `Cancel` text
 * `EasyBackButton.text()` custom text such as `Cancel`
-* `previousTitle` means previous page title
-* `backIcon` can set a icon or text
+* `previousTitle` optional, means previous page title
+* `backIcon` can set a icon or text, default is a back arrow
 * `color` was used for backIcon and text style, defult `black87`
 
 ```dart
@@ -112,3 +112,31 @@ EasyBackButton.close();
 EasyBackButton.cancel();
 EasyBackButton.text('Cancel');
 ```
+
+#### ModalAppBar
+
+`ModalAppBar` is a custom app bar, only used for modal page route `showModalRoute`.
+
+#### Dialog
+
+* `DialogPage`
+* `DialogColumnView`
+* `DialogComplexView`
+* `DialogMessageView`
+* `DialogOption`
+* `DialogData`
+* `BottomSheetView`
+
+#### TextFiled
+
+* `EasyTextField`
+* `EditTextField`
+* `NumCharTextField`
+* `SearchTextField`
+* `UnderlinedTextField`
+
+#### Toast
+
+* `ImageToast`
+* `LoadingToast`
+* `TextToast`

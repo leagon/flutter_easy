@@ -13,6 +13,7 @@ dependencies:
 
   formz: ^0.6.0
   auto_size_text: ^3.0.0
+  fluttertoast: ^8.2.2
 
 
 dev_dependencies:

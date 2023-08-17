@@ -1,4 +1,5 @@
 export 'error/easy_error.dart';
+export 'extension/string_ext.dart';
 export 'interface/clear.dart';
 export 'interface/dispose.dart';
 export 'logging/logging.dart';
