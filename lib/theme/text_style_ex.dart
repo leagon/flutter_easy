@@ -3,27 +3,29 @@ import 'package:flutter/material.dart';
 import 'font_size.dart';
 
 extension TextStyleEx on TextStyle {
-  TextStyle get white => copyWith(color: Colors.white);
+  TextStyle get white => color(Colors.white);
 
-  TextStyle get black => copyWith(color: Colors.black);
+  TextStyle get black => color(Colors.black);
 
-  TextStyle get black87 => copyWith(color: Colors.black87);
+  TextStyle get black87 => color(Colors.black87);
 
-  TextStyle get black54 => copyWith(color: Colors.black54);
+  TextStyle get black54 => color(Colors.black54);
 
-  TextStyle get black38 => copyWith(color: Colors.black38);
+  TextStyle get black38 => color(Colors.black38);
 
-  TextStyle get black26 => copyWith(color: Colors.black26);
+  TextStyle get black26 => color(Colors.black26);
 
-  TextStyle get black12 => copyWith(color: Colors.black12);
+  TextStyle get black12 => color(Colors.black12);
 
-  TextStyle get red => copyWith(color: Colors.red);
+  TextStyle get red => color(Colors.red);
 
-  TextStyle get yellow => copyWith(color: Colors.yellow);
+  TextStyle get yellow => color(Colors.yellow);
 
-  TextStyle get blue => copyWith(color: Colors.blue);
+  TextStyle get blue => color(Colors.blue);
 
-  TextStyle get grey => copyWith(color: Colors.grey);
+  TextStyle get grey => color(Colors.grey);
+
+  TextStyle color(Color color) => copyWith(color: color);
 
   TextStyle get s34 => copyWith(
         fontSize: FontSize.s34.size,
@@ -90,6 +92,13 @@ extension TextStyleEx on TextStyle {
         letterSpacing: FontSize.s11.letterSpacing,
         height: FontSize.s11.lineHeight,
       );
+
+  TextStyle fontSize(double fontSize) => copyWith(fontSize: fontSize);
+
+  TextStyle letterSpacing(double letterSpacing) =>
+      copyWith(letterSpacing: letterSpacing);
+
+  TextStyle height(double height) => copyWith(height: height);
 
   TextStyle get w400 => copyWith(fontWeight: FontWeight.w400);
 
