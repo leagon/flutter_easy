@@ -23,13 +23,13 @@ mixin DialogMixin {
       messageWidget: messageWidget,
       confirmTitle: confirmTitle,
       onConfirm: () {
-        Navigator.of(context).pop();
         onConfirm?.call();
+        Navigator.of(context).maybePop();
       },
       cancelTitle: cancelTitle,
       onCancel: () {
-        Navigator.of(context).pop();
         onCancel?.call();
+        Navigator.of(context).maybePop();
       },
     );
 
@@ -68,13 +68,13 @@ mixin DialogMixin {
       confirmTitle: confirmTitle,
       optionsAxis: optionsAxis,
       onConfirm: () {
-        Navigator.of(context).pop();
         onConfirm?.call();
+        Navigator.of(context).maybePop();
       },
       cancelTitle: cancelTitle,
       onCancel: () {
-        Navigator.of(context).pop();
         onCancel?.call();
+        Navigator.of(context).maybePop();
       },
     );
 

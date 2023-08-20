@@ -99,12 +99,16 @@ class _DialogComplexView extends StatelessWidget {
               const SizedBox(height: 20),
             ],
             if (optionsAxis == Axis.horizontal) ...[
+              /// horizontal
               Row(
                 children: [
                   /// cancel
                   if (cancelTitle != null)
                     Expanded(
                       child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: const Color(0xFF3C5BFF),
+                        ),
                         onPressed: onCancel,
                         child: AutoSizeText(
                           cancelTitle!,
@@ -121,6 +125,11 @@ class _DialogComplexView extends StatelessWidget {
                   if (confirmTitle != null)
                     Expanded(
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Theme.of(context).extension<EasyTheme>()?.primary,
+                          foregroundColor: Colors.white,
+                        ),
                         onPressed: onConfirm,
                         child: AutoSizeText(
                           confirmTitle!,
@@ -132,14 +141,19 @@ class _DialogComplexView extends StatelessWidget {
                 ],
               ),
             ] else ...[
+              /// vertical
               Column(
                 children: [
                   /// confirm
                   if (confirmTitle != null)
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          fixedSize:
-                              Size(MediaQuery.of(context).size.width, 40)),
+                        foregroundColor:
+                            Theme.of(context).extension<EasyTheme>()?.primary,
+                        backgroundColor: Colors.white,
+                        fixedSize: const Size.fromWidth(100),
+                        shadowColor: Colors.transparent,
+                      ),
                       onPressed: onConfirm,
                       child: AutoSizeText(
                         confirmTitle!,

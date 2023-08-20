@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easy/flutter_easy.dart';
 
-import 'dialog_option.dart';
-
 class DialogColumnView extends StatelessWidget {
   final String? title;
   final String? message;
@@ -41,8 +39,8 @@ class DialogColumnView extends StatelessWidget {
         for (var option in options) ...[
           SimpleDialogOption(
             onPressed: () {
-              Navigator.of(context).pop();
               option.onPressed?.call();
+              Navigator.of(context).maybePop();
             },
             padding: EdgeInsets.zero,
             child: Container(
