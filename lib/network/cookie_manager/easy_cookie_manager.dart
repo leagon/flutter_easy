@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_easy/network/cookie_manager/easy_cookie_interceptor.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:synchronized/synchronized.dart';
@@ -24,6 +26,7 @@ class EasyCookieManager {
   final PublishSubject<bool> onHasToken = PublishSubject();
 
   late final CookieJar cookieJar;
+  late final Interceptor interceptor;
 
   bool _hasInit = false;
   final _lock = Lock();
@@ -38,6 +41,7 @@ class EasyCookieManager {
         } else {
           cookieJar = PersistCookieJar(storage: FileStorage(path));
         }
+        interceptor = EasyCookieInterceptor(cookieJar);
         _hasInit = true;
         _checkToken();
       }
