@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easy/flutter_easy.dart';
 
-import 'easy_text_field.dart';
-import 'easy_text_field_style.dart';
-
 class SliverUnderLinedTextField extends StatelessWidget {
   final TextEditingController? textEditingController;
   final EasyTextFieldStyle? style;
